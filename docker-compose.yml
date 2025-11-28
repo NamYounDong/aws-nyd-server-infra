@@ -25,8 +25,12 @@ services:
     image: jc21/nginx-proxy-manager:latest
     container_name: npm
     ports:
+      # Nginx Proxy Manager HTTP
       - "80:80"
+      # Nginx Proxy Manager HTTPS
       - "443:443"
+      # Nginx Proxy Manager UI
+      - "7477:81"
     volumes:
       - ../npm-data:/data
       - ../npm-letsencrypt:/etc/letsencrypt
