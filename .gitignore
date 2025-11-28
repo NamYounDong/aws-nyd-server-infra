@@ -8,11 +8,6 @@ mariadb-data/
 
 # 로그 디렉터리들
 logs/
-logrotate/
-
-# NPM/Jenkins 데이터가 생기면, 필요에 따라 제외
-npm-data/
-npm-letsencrypt/
 
 # 기타
 *.log
