@@ -52,7 +52,7 @@ services:
       - ./mysql-data:/var/lib/mysql
       - ./mariadb/custom.cnf:/etc/mysql/conf.d/custom.cnf:ro
       - ./logs/mariadb:/var/log/mysql
-      - ./logrotate/mariadb-logrotate.conf:/etc/logrotate.d/mariadb
+      - ./logrotate/mariadb-logrotate.conf:/etc/logrotate.d/mariadb-logrotate.conf
     networks:
       - nyd-net
 
@@ -72,7 +72,7 @@ services:
       - redis-data:/data
       - ./redis/redis.conf:/etc/redis/redis.conf:ro
       - ./logs/redis:/var/log/redis
-      - ./logrotate/redis-logrotate.conf:/etc/logrotate.d/redis
+      - ./logrotate/redis-logrotate.conf:/etc/logrotate.d/redis-logrotate.conf
     environment:
       # 컨테이너 내부에서도 REDIS_PASSWORD 환경변수 사용 가능
       REDIS_PASSWORD: "${REDIS_PASSWORD}"
