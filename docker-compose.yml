@@ -12,6 +12,7 @@ services:
       - "6849:8080"
     environment:
       - TZ=Asia/Seoul
+      - JAVA_OPTS=-Xms256m -Xmx768m
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./jenkins_home:/var/jenkins_home
