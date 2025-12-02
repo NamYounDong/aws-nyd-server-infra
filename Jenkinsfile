@@ -8,7 +8,7 @@ pipeline {
                 git(
                     branch: 'main',
                     credentialsId: 'GIT_SSH_PRIVATE_KEY',     // SSH key
-                    url: 'git@github.com:NamYounDong/infra.git'
+                    url: 'git@github.com:NamYounDong/aws-nyd-server-infra.git'
                 )
             }
         }
