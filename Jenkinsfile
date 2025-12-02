@@ -17,9 +17,9 @@ pipeline {
             steps {
                 // Secret text 3개를 환경변수로 받아오기
                 withCredentials([
-                    string(credentialsId: 'infra_maria_db_password', variable: 'MARIADB_ROOT_PASSWORD'),
-                    string(credentialsId: 'infra_redis_password',   variable: 'REDIS_PASSWORD'),
-                    string(credentialsId: 'infra_TIMEZONE',         variable: 'TZ')
+                    string(credentialsId: 'MARIADB_ROOT_PASSWORD', variable: 'MARIADB_ROOT_PASSWORD'),
+                    string(credentialsId: 'REDIS_PASSWORD',   variable: 'REDIS_PASSWORD'),
+                    string(credentialsId: 'TZ',         variable: 'TZ')
                 ]) {
                     sh '''
                     cd infra
