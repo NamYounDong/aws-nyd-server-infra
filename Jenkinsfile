@@ -7,7 +7,7 @@ pipeline {
                 // infra 전용 repo 사용 (실제 주소로 교체)
                 git(
                     branch: 'main',
-                    credentialsId: 'github-ssh',     // 이미 만든 SSH key
+                    credentialsId: 'GIT_SSH_PRIVATE_KEY',     // SSH key
                     url: 'git@github.com:NamYounDong/infra.git'
                 )
             }
