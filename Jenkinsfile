@@ -22,7 +22,6 @@ pipeline {
                     string(credentialsId: 'TZ',         variable: 'TZ')
                 ]) {
                     sh '''
-                    cd infra
 
                     # 필요하다면 .env 파일 생성 (docker-compose에서 ${...} 참조 사용하는 경우)
                     cat > .env <<EOF
@@ -41,7 +40,8 @@ EOF
         stage('Deploy infra (MariaDB + Redis)') {
             steps {
                 sh '''
-                cd infra
+                pwd
+                ls -al
 
                 # DB/Redis만 재기동 (NPM/ Jenkins는 여기서 건드리지 않는 게 안전)
                 docker compose pull nyd-mariadb nyd-redis || true
