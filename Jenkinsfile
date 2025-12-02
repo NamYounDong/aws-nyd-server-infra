@@ -44,8 +44,7 @@ EOF
                 ls -al
 
                 # DB/Redis만 재기동 (NPM/ Jenkins는 여기서 건드리지 않는 게 안전)
-                docker compose pull nyd-mariadb nyd-redis || true
-                docker compose up -d nyd-mariadb nyd-redis
+                docker compose -f docker-compose.yml up -d
                 '''
             }
         }
